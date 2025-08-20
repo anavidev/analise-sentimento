@@ -18,7 +18,7 @@ Quantidade de colunas: {dataset.shape[1]}\n""")
 
 # tratamento para valores ausentes por coluna
 def valores_ausentes(dataset,identificacao):
-    logging.info(f"Verificacao de valores ausentes do dataset {identificacao.upper()}.\n")
+    logging.info(f"Verificacao de valores ausentes no dataset {identificacao.upper()}.\n")
     if dataset.isna().any(axis=1).any():
         logging.info(f'Removendo {dataset.isna().sum()} valores ausentes.\n')
         dataset = dataset.dropna()
@@ -26,7 +26,7 @@ def valores_ausentes(dataset,identificacao):
     else:
         logging.info("Nao ha valores ausentes.\n")   
 
-    return dataset            
+    return dataset           
 
 
 # tratamento para linhas duplicadas
@@ -34,7 +34,7 @@ def duplicatas(dataset,colunas,identificacao):
     logging.info(f"Verificacao de linhas duplicadas do dataset {identificacao.upper()}.\n")
     if dataset.duplicated(subset=colunas).any():
         logging.info(f'Removendo {dataset.duplicated(subset=colunas).sum()} linhas duplicadas.\n')
-        dataset = dataset.drop_duplicates(subset=colunas, keep='last') # mantem a ultima ocorrencia
+        dataset = dataset.drop_duplicates(subset=colunas, keep='last')
         logging.info(f"Linhas duplicadas removidas. Total de linhas apos remocao: {dataset.shape[0]}.\n")
     else:
         logging.info("Nao ha duplicatas.\n")
@@ -50,8 +50,6 @@ def traducao_valores_booleanos(dataset,coluna):
     else 0,
     axis = 1
     )
-
-    return dataset
 
 
 # excluir uma coluna do dataset

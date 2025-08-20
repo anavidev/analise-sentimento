@@ -1,8 +1,13 @@
-# Análise de Sentimento com Dados de Loja
+# Análise de Sentimento com Dados de E-commerce
 
 ## Estrutura do Repositório
 - `src/utils.py`: Funções auxiliares para tratamento e transformação dos dados.
 - `data/raw`: Arquivos com dados brutos, ainda não transformados.
+- `data/processed`: Arquivos com dados que já passaram pelas etapas de transformação e limpeza.
+- `data/logs`: Arquivos logs para monitoramento e acompanhamento do processo de transformação dos dados.
+- `src/extract.py`: Etapa de extração dos dados a partir de um arquivo CSV.
+- `src/transform.py`: Etapa de transformação e limpeza dos dados extraídos.
+- `src/load.py`: Etapa de carregamento dos dados transformados para `data/processed`.
 - `README.md`: Documento que descreve o projeto e suas funcionalidades.
 
 ## Funcionalidades
