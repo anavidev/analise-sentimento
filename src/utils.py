@@ -45,8 +45,8 @@ def duplicatas(dataset,colunas,identificacao):
 # traducao de valores de colunas com valores booleanos
 def traducao_valores_booleanos(dataset,coluna):
     dataset[coluna] = dataset.apply(
-    lambda row: 1 if row[coluna] == 'positive'
-    else -1 if row[coluna] == 'negative'
+    lambda row: 1 if row[coluna] == 'positive' or row[coluna] == 'Positive'
+    else -1 if row[coluna] == 'negative' or row[coluna] == 'Negative'
     else 0,
     axis = 1
     )
