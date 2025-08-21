@@ -58,23 +58,3 @@ def excluir_coluna(dataset,coluna,identificacao):
     logging.info(f'Coluna {coluna} foi excluida do dataset {identificacao.upper()}.\n')
 
     return dataset
-
-
-# pesos das novas categorias
-def classificar_sentimento_novo(pontuacao):
-    if pontuacao >= 1:
-        return 1
-    elif pontuacao <= -1:
-        return -1
-    else:
-        return 0
-
-
-# aplicar pesos nas categorias do algoritmo baseado em regras
-def peso_categoria_positiva(dataset, categoria, peso):
-    for palavra in categoria:
-        dataset["pontuacao"] += peso * dataset["comentario"].str.casefold().str.count(palavra)
-
-def peso_categoria_negativa(dataset, categoria, peso):
-    for palavra in categoria:
-        dataset["pontuacao"] -= peso * dataset["comentario"].str.casefold().str.count(palavra)

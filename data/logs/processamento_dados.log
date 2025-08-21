@@ -1,60 +1,71 @@
-2025-08-20 16:55:38,426 - INFO 
+2025-08-21 02:00:49,687 - INFO 
 Dataset importado com sucesso.
 
-2025-08-20 16:55:38,426 - INFO 
+2025-08-21 02:00:49,687 - INFO 
 Verificacao do dataset TESTE
 Quantidade de linhas: 205052
 Quantidade de colunas: 6
 
-2025-08-20 16:55:38,446 - INFO 
+2025-08-21 02:00:49,705 - INFO 
 Coluna nome_produto foi excluida do dataset TESTE.
 
-2025-08-20 16:55:38,461 - INFO 
+2025-08-21 02:00:49,710 - INFO 
 Coluna preco_produto foi excluida do dataset TESTE.
 
-2025-08-20 16:55:38,474 - INFO 
+2025-08-21 02:00:49,726 - INFO 
 Coluna pontuacao foi excluida do dataset TESTE.
 
-2025-08-20 16:55:38,482 - INFO 
+2025-08-21 02:00:49,726 - INFO 
 Coluna avaliacao foi excluida do dataset TESTE.
 
-2025-08-20 16:55:38,487 - INFO 
+2025-08-21 02:00:49,726 - INFO 
 Verificacao de valores ausentes no dataset TESTE.
 
-2025-08-20 16:55:38,527 - INFO 
+2025-08-21 02:00:49,757 - INFO 
 Removendo comentario    11
 sentimento     0
 dtype: int64 valores ausentes.
 
-2025-08-20 16:55:38,558 - INFO 
+2025-08-21 02:00:49,789 - INFO 
 Valores ausentes removidos. Total de linhas apos remocao: 205041
 
-2025-08-20 16:55:38,560 - INFO 
+2025-08-21 02:00:49,789 - INFO 
 Verificacao de linhas duplicadas do dataset TESTE.
 
-2025-08-20 16:55:38,683 - INFO 
+2025-08-21 02:00:49,899 - INFO 
 Removendo 111120 linhas duplicadas.
 
-2025-08-20 16:55:38,750 - INFO 
+2025-08-21 02:00:49,943 - INFO 
 Linhas duplicadas removidas. Total de linhas apos remocao: 93921.
 
-2025-08-20 16:55:39,773 - INFO 
+2025-08-21 02:00:50,869 - INFO 
 Verificacao de valores ausentes no dataset TESTE.
 
-2025-08-20 16:55:39,780 - INFO 
+2025-08-21 02:00:50,884 - INFO 
 Nao ha valores ausentes.
 
-2025-08-20 16:55:39,780 - INFO 
+2025-08-21 02:00:50,884 - INFO 
 Verificacao de linhas duplicadas do dataset TESTE.
 
-2025-08-20 16:55:39,813 - INFO 
+2025-08-21 02:00:50,916 - INFO 
 Nao ha duplicatas.
 
-2025-08-20 16:55:39,813 - INFO 
+2025-08-21 02:00:50,916 - INFO 
 Verificacao final.
 
-2025-08-20 16:55:39,813 - INFO 
+2025-08-21 02:00:50,916 - INFO 
 Verificacao do dataset TESTE
 Quantidade de linhas: 93921
 Quantidade de colunas: 2
+
+2025-08-21 02:00:52,084 - INFO 
+Dataset importado com sucesso.
+
+2025-08-21 02:00:52,084 - INFO 
+Verificacao do dataset TESTE
+Quantidade de linhas: 93921
+Quantidade de colunas: 2
+
+2025-08-21 02:00:59,201 - INFO 
+Coluna pontuacao_vader foi excluida do dataset TESTE.
 
