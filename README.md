@@ -22,3 +22,4 @@
 - **Python**: Linguagem principal utilizada para o desenvolvimento do projeto.
 - **Pandas**: Biblioteca utilizada para leitura, manipulação e limpeza dos dados.
 - **NumPy**: Biblioteca utilizada para realizar operações vetoriais e matemáticas rápidas.
+- **Scikit-learn**: Biblioteca utilizada para desenvolver o algoritmo de aprendizado de máquina e calcular estatísticas de resultados.
