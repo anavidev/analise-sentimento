@@ -1,4 +1,4 @@
-from load import *
+from utils import pd, verificar_dataset
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -10,15 +10,24 @@ verificar_dataset("Dataset importado com sucesso.",dt,"Store Product")
 print("Análise em andamento.")
 
 # holdout method (split train/test)
-x_train, x_test, y_train, y_test = train_test_split(dt['comentario'], dt['sentimento'], test_size=0.2, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(dt['comentario'], dt['sentimento'], test_size=0.25, random_state=42)
 
 # transformar texto dos comentarios em numeros
-vectorizer = TfidfVectorizer(stop_words='english',ngram_range=(1,3), max_features=5000, min_df=2)
+vectorizer = TfidfVectorizer(
+    stop_words='english',
+    ngram_range=(1,3),
+    max_features=5000,
+    min_df=2,
+    max_df=0.9
+)
 x_train_vec = vectorizer.fit_transform(x_train)
 x_test_vec = vectorizer.transform(x_test)
 
 # treinar e testar o modelo
-modelo = LogisticRegression(max_iter=1000, C=1)
+modelo = LogisticRegression(
+    max_iter=1000,
+    class_weight='balanced'
+)
 modelo.fit(x_train_vec, y_train)
 modelo_preds = modelo.predict(x_test_vec)
 

@@ -1,6 +1,7 @@
 import numpy as np
+from sklearn.metrics import accuracy_score
 
-from load import *
+from utils import pd, verificar_dataset
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from sklearn.metrics import confusion_matrix, f1_score
 
@@ -32,7 +33,7 @@ print("\nQuantidade de comentarios por cada sentimento depois da classificacao -
 print(dt.groupby('sentimento_pred')['compound_vader'].count())
 
 print("\nAcuracia:")
-acuracia = np.mean(dt['sentimento_pred'] == dt['sentimento'])
+acuracia = accuracy_score(dt['sentimento'], dt['sentimento_pred'])
 print(f'{acuracia:.4f} = {acuracia * 100:.2f}%')
 
 print("\nF1-Score:")
