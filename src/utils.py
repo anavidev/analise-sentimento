@@ -1,4 +1,6 @@
 import logging
+import numpy as np
+import pandas as pd
 
 # configuracao do logging
 logging.basicConfig(
@@ -20,7 +22,8 @@ Quantidade de colunas: {dataset.shape[1]}\n""")
 def valores_ausentes(dataset,identificacao):
     logging.info(f"Verificacao de valores ausentes no dataset {identificacao.upper()}.\n")
     if dataset.isna().any(axis=1).any():
-        logging.info(f'Removendo {dataset.isna().sum()} valores ausentes.\n')
+        dataset['comentario'] = dataset['comentario'].replace(['Nan','not specified'], np.nan)
+        logging.info(f'Removendo {dataset.isna().sum().sum()} valores ausentes.\n')
         dataset = dataset.dropna()
         logging.info(f"Valores ausentes removidos. Total de linhas apos remocao: {dataset.shape[0]}\n")
     else:
@@ -45,8 +48,8 @@ def duplicatas(dataset,colunas,identificacao):
 # traducao de valores de colunas com valores booleanos
 def traducao_valores_booleanos(dataset,coluna):
     dataset[coluna] = dataset.apply(
-    lambda row: 1 if row[coluna] == 'positive' or row[coluna] == 'Positive'
-    else -1 if row[coluna] == 'negative' or row[coluna] == 'Negative'
+    lambda row: 1 if row[coluna] == 'positive'
+    else -1 if row[coluna] == 'negative'
     else 0,
     axis = 1
     )
@@ -58,3 +61,24 @@ def excluir_coluna(dataset,coluna,identificacao):
     logging.info(f'Coluna {coluna} foi excluida do dataset {identificacao.upper()}.\n')
 
     return dataset
+
+
+def balancear_classes(dataset, coluna, identificacao):
+    logging.info(f'Verificando o balanceamento das classes do dataset {identificacao.upper()}')
+    logging.info(f"Quantidade de dados por classe:\n{dataset.groupby(coluna).size().to_string()}")
+
+    # tamanho da classe minoritaria
+    tamanho_min = dataset[coluna].value_counts().min()
+    
+    # undersampling para cada classe
+    datasets_balanceados = []
+    for classe, grupo in dataset.groupby(coluna):
+        datasets_balanceados.append(grupo.sample(tamanho_min, random_state=42))
+    
+    # embaralhar dados listados
+    dt_balanceado = pd.concat(datasets_balanceados).sample(frac=1, random_state=42).reset_index(drop=True)
+    logging.info("Classes balanceadas.")
+    logging.info(f"Quantidade de dados por classe atualizada:\n{dt_balanceado.groupby(coluna).size().to_string()}")
+    
+    return dt_balanceado
+
