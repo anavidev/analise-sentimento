@@ -1,162 +1,70 @@
-2025-08-21 20:11:24,967 - INFO 
+2025-08-22 02:12:39,216 - INFO 
 Dataset importado com sucesso.
 
-2025-08-21 20:11:24,967 - INFO 
-Verificacao do dataset RULE-BASED
-Quantidade de linhas: 205052
+2025-08-22 02:12:39,216 - INFO 
+Verificacao do dataset STORE PRODUCT
+Quantidade de linhas: 76747
 Quantidade de colunas: 6
 
-2025-08-21 20:11:25,262 - INFO 
-Dataset importado com sucesso.
+2025-08-22 02:12:39,220 - INFO 
+Verificacao de valores ausentes no dataset STORE PRODUCT.
 
-2025-08-21 20:11:25,263 - INFO 
-Verificacao do dataset ML-BASED
-Quantidade de linhas: 21255
-Quantidade de colunas: 19
+2025-08-22 02:12:39,252 - INFO 
+Removendo 28210 valores ausentes.
 
-2025-08-21 20:11:25,282 - INFO 
-Coluna nome_produto foi excluida do dataset RULE-BASED.
+2025-08-22 02:12:39,267 - INFO 
+Valores ausentes removidos. Total de linhas apos remocao: 48753
 
-2025-08-21 20:11:25,291 - INFO 
-Coluna preco_produto foi excluida do dataset RULE-BASED.
+2025-08-22 02:12:39,268 - INFO 
+Verificacao de linhas duplicadas do dataset STORE PRODUCT.
 
-2025-08-21 20:11:25,301 - INFO 
-Coluna pontuacao foi excluida do dataset RULE-BASED.
+2025-08-22 02:12:39,318 - INFO 
+Removendo 5726 linhas duplicadas.
 
-2025-08-21 20:11:25,311 - INFO 
-Coluna avaliacao foi excluida do dataset RULE-BASED.
+2025-08-22 02:12:39,350 - INFO 
+Linhas duplicadas removidas. Total de linhas apos remocao: 43027.
 
-2025-08-21 20:11:25,311 - INFO 
-Verificacao de valores ausentes no dataset RULE-BASED.
+2025-08-22 02:12:39,353 - INFO 
+Coluna nome_produto foi excluida do dataset STORE PRODUCT.
 
-2025-08-21 20:11:25,342 - INFO 
-Removendo comentario    11
-sentimento     0
-dtype: int64 valores ausentes.
+2025-08-22 02:12:39,355 - INFO 
+Coluna preco_produto foi excluida do dataset STORE PRODUCT.
 
-2025-08-21 20:11:25,362 - INFO 
-Valores ausentes removidos. Total de linhas apos remocao: 205041
+2025-08-22 02:12:39,357 - INFO 
+Coluna pontuacao foi excluida do dataset STORE PRODUCT.
 
-2025-08-21 20:11:25,370 - INFO 
-Verificacao de linhas duplicadas do dataset RULE-BASED.
+2025-08-22 02:12:39,359 - INFO 
+Coluna avaliacao foi excluida do dataset STORE PRODUCT.
 
-2025-08-21 20:11:25,472 - INFO 
-Removendo 111120 linhas duplicadas.
-
-2025-08-21 20:11:25,530 - INFO 
-Linhas duplicadas removidas. Total de linhas apos remocao: 93921.
-
-2025-08-21 20:11:26,495 - INFO 
-Verificacao de valores ausentes no dataset RULE-BASED.
-
-2025-08-21 20:11:26,505 - INFO 
-Nao ha valores ausentes.
-
-2025-08-21 20:11:26,505 - INFO 
-Verificacao de linhas duplicadas do dataset RULE-BASED.
-
-2025-08-21 20:11:26,536 - INFO 
-Nao ha duplicatas.
-
-2025-08-21 20:11:26,536 - INFO 
+2025-08-22 02:12:39,703 - INFO 
+Verificando o balanceamento das classes do dataset STORE PRODUCT
+2025-08-22 02:12:39,705 - INFO 
+Quantidade de dados por classe:
+sentimento
+-1     4431
+ 0    16776
+ 1    21820
+2025-08-22 02:12:39,712 - INFO 
+Classes balanceadas.
+2025-08-22 02:12:39,713 - INFO 
+Quantidade de dados por classe atualizada:
+sentimento
+-1    4431
+ 0    4431
+ 1    4431
+2025-08-22 02:12:39,759 - INFO 
 Verificacao final.
 
-2025-08-21 20:11:26,536 - INFO 
-Verificacao do dataset RULE-BASED
-Quantidade de linhas: 93921
+2025-08-22 02:12:39,759 - INFO 
+Verificacao do dataset STORE PRODUCT
+Quantidade de linhas: 13293
 Quantidade de colunas: 2
 
-2025-08-21 20:11:26,544 - INFO 
-Coluna comentario_limpo foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,546 - INFO 
-Coluna avaliacao foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,546 - INFO 
-Coluna pontuacao foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,554 - INFO 
-Coluna medo foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,556 - INFO 
-Coluna raiva foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,556 - INFO 
-Coluna antecipacao foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,556 - INFO 
-Coluna confianca foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,556 - INFO 
-Coluna surpresa foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,564 - INFO 
-Coluna positividade foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,566 - INFO 
-Coluna negatividade foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,566 - INFO 
-Coluna tristeza foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,566 - INFO 
-Coluna nojo foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,566 - INFO 
-Coluna alegria foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,566 - INFO 
-Coluna topico foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,566 - INFO 
-Coluna cluster foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,566 - INFO 
-Coluna pca_1 foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,566 - INFO 
-Coluna pca_2 foi excluida do dataset ML-BASED.
-
-2025-08-21 20:11:26,566 - INFO 
-Verificacao de valores ausentes no dataset ML-BASED.
-
-2025-08-21 20:11:26,574 - INFO 
-Nao ha valores ausentes.
-
-2025-08-21 20:11:26,574 - INFO 
-Verificacao de linhas duplicadas do dataset ML-BASED.
-
-2025-08-21 20:11:26,596 - INFO 
-Nao ha duplicatas.
-
-2025-08-21 20:11:27,067 - INFO 
-Verificacao de valores ausentes no dataset ML-BASED.
-
-2025-08-21 20:11:27,067 - INFO 
-Nao ha valores ausentes.
-
-2025-08-21 20:11:27,067 - INFO 
-Verificacao de linhas duplicadas do dataset ML-BASED.
-
-2025-08-21 20:11:27,087 - INFO 
-Nao ha duplicatas.
-
-2025-08-21 20:11:27,087 - INFO 
-Verificacao final.
-
-2025-08-21 20:11:27,087 - INFO 
-Verificacao do dataset ML-BASED
-Quantidade de linhas: 21255
-Quantidade de colunas: 2
-
-2025-08-21 20:11:28,614 - INFO 
+2025-08-22 02:12:40,771 - INFO 
 Dataset importado com sucesso.
 
-2025-08-21 20:11:28,614 - INFO 
-Verificacao do dataset TESTE
-Quantidade de linhas: 93921
+2025-08-22 02:12:40,771 - INFO 
+Verificacao do dataset STORE PRODUCT
+Quantidade de linhas: 13293
 Quantidade de colunas: 2
-
-2025-08-21 20:11:36,636 - INFO 
-Coluna pontuacao_vader foi excluida do dataset TESTE.
 
