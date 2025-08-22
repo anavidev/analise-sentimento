@@ -8,3 +8,5 @@ try:
 
 except Exception as e:
     print(f'Não foi possível extrair os dados.\nErro: {e}')
+
+print("Extracao concluida.")
