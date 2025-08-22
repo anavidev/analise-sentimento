@@ -1,16 +1,17 @@
 from utils import pd, verificar_dataset
-from sklearn.model_selection import train_test_split
+from load import dt_mlb
+from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
 
-dt = pd.read_csv("data/processed/store_product_reviews_ml_transformed.csv", sep = ';')
-verificar_dataset("Dataset importado com sucesso.",dt,"Store Product")
+dt_mlb = pd.read_csv("data/processed/store_product_reviews_ml_transformed.csv", sep = ';')
+verificar_dataset("Dataset importado com sucesso.",dt_mlb,"Store Product")
 
 print("Análise em andamento.")
 
 # holdout method (split train/test)
-x_train, x_test, y_train, y_test = train_test_split(dt['comentario'], dt['sentimento'], test_size=0.25, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(dt_mlb['comentario'], dt_mlb['sentimento'], test_size=0.25, random_state=42, stratify=dt_mlb['sentimento'])
 
 # transformar texto dos comentarios em numeros
 vectorizer = TfidfVectorizer(
@@ -34,21 +35,22 @@ modelo_preds = modelo.predict(x_test_vec)
 # resultados
 print("\nEstatísticas do Algoritmo Machine Learning Based")
 
+acuracia = accuracy_score(y_test, modelo_preds)
+cv_scores = cross_val_score(modelo, vectorizer.fit_transform(dt_mlb['comentario']), dt_mlb['sentimento'], cv=5, scoring='accuracy')
+matriz = confusion_matrix(y_test, modelo_preds)
+
 print("\nQuantidade de comentarios por cada sentimento antes da classificacao - DATASET DE TESTE:")
 print(pd.Series(y_test).value_counts().sort_index())
 
 print("\nQuantidade de comentarios por cada sentimento depois da classificacao - DATASET DE TESTE:")
 print(pd.Series(modelo_preds).value_counts().sort_index())
 
-print(f"\nAcuracia:")
-acuracia = accuracy_score(y_test, modelo_preds)
-print(f'{acuracia:.4f} = {acuracia * 100:.2f}%')
-
-print("\nF1-Score:")
-print(f"{f1_score(y_test, modelo_preds, average='weighted'):.3f}")
+print(f"\nAcurácia: {acuracia:.3f} ({acuracia * 100:.1f}%)")
+print(f"\nF1-Score: {f1_score(y_test, modelo_preds, average='weighted'):.3f}")
+print(f"\nValidação Cruzada: {cv_scores.mean():.3f} (± {cv_scores.std():.3f})")
+print(f"Pontuacoes da Validação Cruzada: {[f'{score:.3f}' for score in cv_scores]}")
 
 print("\nMatriz de Confusão:")
-matriz = confusion_matrix(y_test, modelo_preds)
 print(f"""Valores Negativos Corretos = {matriz[0][0]}
 Valores Neutros Corretos = {matriz[1][1]} 
 Valores Positivos Corretos = {matriz[2][2]}\n

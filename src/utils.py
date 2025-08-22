@@ -9,7 +9,6 @@ logging.basicConfig(
     format= '%(asctime)s - %(levelname)s \n%(message)s',
 )
 
-
 # verificacao de alteracoes no dataset
 def verificar_dataset(mensagem,dataset,identificacao):
     logging.info(f'{mensagem}\n')
@@ -17,12 +16,11 @@ def verificar_dataset(mensagem,dataset,identificacao):
 Quantidade de linhas: {dataset.shape[0]}
 Quantidade de colunas: {dataset.shape[1]}\n""")
 
-
 # tratamento para valores ausentes por coluna
 def valores_ausentes(dataset,identificacao):
     logging.info(f"Verificacao de valores ausentes no dataset {identificacao.upper()}.\n")
     if dataset.isna().any(axis=1).any():
-        dataset['comentario'] = dataset['comentario'].replace(['Nan','not specified'], np.nan)
+        dataset = dataset.replace(['Nan','not specified'], np.nan)
         logging.info(f'Removendo {dataset.isna().sum().sum()} valores ausentes.\n')
         dataset = dataset.dropna()
         logging.info(f"Valores ausentes removidos. Total de linhas apos remocao: {dataset.shape[0]}\n")
@@ -30,7 +28,6 @@ def valores_ausentes(dataset,identificacao):
         logging.info("Nao ha valores ausentes.\n")   
 
     return dataset           
-
 
 # tratamento para linhas duplicadas
 def duplicatas(dataset,colunas,identificacao):
@@ -44,16 +41,11 @@ def duplicatas(dataset,colunas,identificacao):
 
     return dataset
 
-
 # traducao de valores de colunas com valores booleanos
 def traducao_valores_booleanos(dataset,coluna):
-    dataset[coluna] = dataset.apply(
-    lambda row: 1 if row[coluna] == 'positive'
-    else -1 if row[coluna] == 'negative'
-    else 0,
-    axis = 1
-    )
+    dataset[coluna] = dataset[coluna].map({'positive': 1, 'negative': -1, 'neutral': 0}).fillna(0)
 
+    return dataset
 
 # excluir uma coluna do dataset
 def excluir_coluna(dataset,coluna,identificacao):
@@ -61,7 +53,6 @@ def excluir_coluna(dataset,coluna,identificacao):
     logging.info(f'Coluna {coluna} foi excluida do dataset {identificacao.upper()}.\n')
 
     return dataset
-
 
 def balancear_classes(dataset, coluna, identificacao):
     logging.info(f'Verificando o balanceamento das classes do dataset {identificacao.upper()}')

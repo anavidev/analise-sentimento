@@ -1,13 +1,15 @@
 # Análise de Sentimento com Dados de E-commerce
 
 ## Estrutura do Repositório
-- `src/utils.py`: Funções auxiliares para tratamento e transformação dos dados.
 - `data/raw`: Arquivos com dados brutos, ainda não transformados.
 - `data/processed`: Arquivos com dados que já passaram pelas etapas de transformação e limpeza.
 - `data/logs`: Arquivos logs para monitoramento e acompanhamento do processo de transformação dos dados.
+- `src/utils.py`: Funções auxiliares para tratamento e transformação dos dados.
 - `src/extract.py`: Etapa de extração dos dados a partir de um arquivo CSV.
 - `src/transform.py`: Etapa de transformação e limpeza dos dados extraídos.
 - `src/load.py`: Etapa de carregamento dos dados transformados para `data/processed`.
+- `src/rule-based.py`: Algoritmo de análise de sentimento baseado em regras.
+- `src/ml-based.py`: Algoritmo de análise de sentimento com aprendizado de máquina.
 - `README.md`: Documento que descreve o projeto e suas funcionalidades.
 
 ## Funcionalidades
@@ -22,4 +24,5 @@
 - **Python**: Linguagem principal utilizada para o desenvolvimento do projeto.
 - **Pandas**: Biblioteca utilizada para leitura, manipulação e limpeza dos dados.
 - **NumPy**: Biblioteca utilizada para realizar operações vetoriais e matemáticas rápidas.
+- **Vader**: Biblioteca utilizada para 
 - **Scikit-learn**: Biblioteca utilizada para desenvolver o algoritmo de aprendizado de máquina e calcular estatísticas de resultados.
