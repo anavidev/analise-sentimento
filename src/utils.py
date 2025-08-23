@@ -1,6 +1,7 @@
 import logging
 import numpy as np
 import pandas as pd
+import seaborn as sns
 
 # configuracao do logging
 logging.basicConfig(
@@ -73,3 +74,17 @@ def balancear_classes(dataset, coluna, identificacao):
     
     return dt_balanceado
 
+# adicao de valores nas barras e colunas dos graficos
+def valor_barras(plot, casas_decimais):
+    for valor in plot.containers:
+        plot.bar_label(valor, fmt=f'%.{casas_decimais}f', label_type='edge')
+
+# geracao de graficos de colunas com uma variavel
+def grafico_colunas_1(relacao, paleta):
+    grafico = sns.barplot(x = relacao.index, y = relacao.values, hue = relacao.index, palette=paleta)
+    return grafico
+
+# geracao de grafico de barras com duas variaveis
+def grafico_barras(relacao, coluna_x, tipo_relacao, hue, paleta):
+    grafico = sns.barplot(data = relacao, x = tipo_relacao, y = coluna_x, hue = hue, palette=paleta)
+    return grafico

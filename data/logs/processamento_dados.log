@@ -1,77 +1,15 @@
-2025-08-22 17:32:28,111 - INFO 
+2025-08-23 18:22:23,425 - INFO 
 Dataset importado com sucesso.
 
-2025-08-22 17:32:28,111 - INFO 
+2025-08-23 18:22:23,425 - INFO 
 Verificacao do dataset STORE PRODUCT
-Quantidade de linhas: 76747
-Quantidade de colunas: 6
-
-2025-08-22 17:32:28,115 - INFO 
-Verificacao de valores ausentes no dataset STORE PRODUCT.
-
-2025-08-22 17:32:28,187 - INFO 
-Removendo 34029 valores ausentes.
-
-2025-08-22 17:32:28,196 - INFO 
-Valores ausentes removidos. Total de linhas apos remocao: 42934
-
-2025-08-22 17:32:28,196 - INFO 
-Verificacao de linhas duplicadas do dataset STORE PRODUCT.
-
-2025-08-22 17:32:28,243 - INFO 
-Removendo 4278 linhas duplicadas.
-
-2025-08-22 17:32:28,274 - INFO 
-Linhas duplicadas removidas. Total de linhas apos remocao: 38656.
-
-2025-08-22 17:32:28,276 - INFO 
-Coluna nome_produto foi excluida do dataset STORE PRODUCT.
-
-2025-08-22 17:32:28,278 - INFO 
-Coluna preco_produto foi excluida do dataset STORE PRODUCT.
-
-2025-08-22 17:32:28,280 - INFO 
-Coluna pontuacao foi excluida do dataset STORE PRODUCT.
-
-2025-08-22 17:32:28,282 - INFO 
-Coluna avaliacao foi excluida do dataset STORE PRODUCT.
-
-2025-08-22 17:32:28,286 - INFO 
-Verificando o balanceamento das classes do dataset STORE PRODUCT
-2025-08-22 17:32:28,288 - INFO 
-Quantidade de dados por classe:
-sentimento
--1     3984
- 0    15179
- 1    19493
-2025-08-22 17:32:28,296 - INFO 
-Classes balanceadas.
-2025-08-22 17:32:28,296 - INFO 
-Quantidade de dados por classe atualizada:
-sentimento
--1    3984
- 0    3984
- 1    3984
-2025-08-22 17:32:28,374 - INFO 
-Verificacao final - Dataframe Rule-Based.
-
-2025-08-22 17:32:28,374 - INFO 
-Verificacao do dataset STORE PRODUCT RULE-BASED
 Quantidade de linhas: 11952
 Quantidade de colunas: 2
 
-2025-08-22 17:32:28,374 - INFO 
-Verificacao final - Dataframe Machine Learning Based
-
-2025-08-22 17:32:28,374 - INFO 
-Verificacao do dataset STORE PRODUCT ML-BASED
-Quantidade de linhas: 11952
-Quantidade de colunas: 2
-
-2025-08-22 17:32:29,359 - INFO 
+2025-08-23 18:22:24,194 - INFO 
 Dataset importado com sucesso.
 
-2025-08-22 17:32:29,359 - INFO 
+2025-08-23 18:22:24,194 - INFO 
 Verificacao do dataset STORE PRODUCT
 Quantidade de linhas: 11952
 Quantidade de colunas: 2

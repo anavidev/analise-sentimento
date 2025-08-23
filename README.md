@@ -15,14 +15,17 @@
 ## Funcionalidades
 
 ## Conceitos de Programação
-- **Variáveis:** Utilizadas para armazenar dados do dataset e configurações personalizadas.
-- **Estruturas de Controle:** Uso de estruturas condicionais para manipulação e verificação de dados nos DataFrames.
-- **Funções:** Funções são utilizadas para modularizar o código e garantir reutilização.
-- **Tratamento de Erros:** O tratamento de erros é feito por meio de de blocos `try/except` para registrar possíveis falhas que possam ocorrer durante a extração dos dados.
+- **Variáveis**: Utilizadas para armazenar dados do dataset e configurações personalizadas.
+- **Estruturas de Controle**: Uso de estruturas condicionais e de repetição para manipulação e verificação de dados nos DataFrames.
+- **Funções**: Utilizadas para modularizar o código e garantir reutilização.
+- **Tratamento de Erros**: O tratamento de erros é feito por meio de de blocos `try/except` para registrar possíveis falhas que possam ocorrer durante a extração dos dados.
 
 ## Tecnologias Utilizadas
 - **Python**: Linguagem principal utilizada para o desenvolvimento do projeto.
 - **Pandas**: Biblioteca utilizada para leitura, manipulação e limpeza dos dados.
 - **NumPy**: Biblioteca utilizada para realizar operações vetoriais e matemáticas rápidas.
-- **Vader**: Biblioteca utilizada para 
+- **Vader**: Biblioteca utilizada para formar dicionário lexicon e regras para estimar o sentimento (positivo, negativo ou neutro) em textos. 
 - **Scikit-learn**: Biblioteca utilizada para desenvolver o algoritmo de aprendizado de máquina e calcular estatísticas de resultados.
+- **Matplotlib** e **Seaborn**: Bibliotecas para a construção, visualização e estilização dos gráficos.
+
+### Possíveis Melhorias Futuras

@@ -1,5 +1,4 @@
-import pandas as pd
-from utils import verificar_dataset
+from utils import pd, verificar_dataset
 
 # dataset para o rule-based
 try:
