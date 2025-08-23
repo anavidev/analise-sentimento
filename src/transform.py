@@ -1,5 +1,5 @@
-from extract import *
-from utils import valores_ausentes, duplicatas, excluir_coluna, traducao_valores_booleanos, balancear_classes
+from utils import pd, verificar_dataset, valores_ausentes, duplicatas, excluir_coluna, traducao_valores_booleanos, balancear_classes
+from extract import dt
 
 ## limpeza, validacao e transformacao dos dados
 

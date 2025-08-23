@@ -1,9 +1,9 @@
 from utils import pd, verificar_dataset
-from load import dt_mlb
 from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
+
 
 dt_mlb = pd.read_csv("data/processed/store_product_reviews_ml_transformed.csv", sep = ';')
 verificar_dataset("Dataset importado com sucesso.",dt_mlb,"Store Product")
@@ -35,29 +35,32 @@ modelo_preds = modelo.predict(x_test_vec)
 # resultados
 print("\nEstatísticas do Algoritmo Machine Learning Based")
 
-acuracia = accuracy_score(y_test, modelo_preds)
+qtd_comentarios_antes_mlb = pd.Series(y_test).value_counts().sort_index()
+qtd_comentarios_depois_mlb = pd.Series(modelo_preds).value_counts().sort_index()
+acuracia_mlb = accuracy_score(y_test, modelo_preds)
+f1_score_mlb = f1_score(y_test, modelo_preds, average='weighted')
 cv_scores = cross_val_score(modelo, vectorizer.fit_transform(dt_mlb['comentario']), dt_mlb['sentimento'], cv=5, scoring='accuracy')
-matriz = confusion_matrix(y_test, modelo_preds)
+matriz_mlb = confusion_matrix(y_test, modelo_preds)
 
 print("\nQuantidade de comentarios por cada sentimento antes da classificacao - DATASET DE TESTE:")
-print(pd.Series(y_test).value_counts().sort_index())
+print(qtd_comentarios_antes_mlb)
 
 print("\nQuantidade de comentarios por cada sentimento depois da classificacao - DATASET DE TESTE:")
-print(pd.Series(modelo_preds).value_counts().sort_index())
+print(qtd_comentarios_depois_mlb)
 
-print(f"\nAcurácia: {acuracia:.3f} ({acuracia * 100:.1f}%)")
-print(f"\nF1-Score: {f1_score(y_test, modelo_preds, average='weighted'):.3f}")
+print(f"\nAcurácia: {acuracia_mlb:.3f} ({acuracia_mlb * 100:.1f}%)")
+print(f"\nF1-Score: {f1_score_mlb:.3f}")
 print(f"\nValidação Cruzada: {cv_scores.mean():.3f} (± {cv_scores.std():.3f})")
 print(f"Pontuacoes da Validação Cruzada: {[f'{score:.3f}' for score in cv_scores]}")
 
 print("\nMatriz de Confusão:")
-print(f"""Valores Negativos Corretos = {matriz[0][0]}
-Valores Neutros Corretos = {matriz[1][1]} 
-Valores Positivos Corretos = {matriz[2][2]}\n
-Valores Negativos classificados como Neutros = {matriz[0][1]}
-Valores Negativos classificados como Positivos = {matriz[0][2]}
-Valores Neutros classificados como Negativos = {matriz[1][0]}
-Valores Neutros classificados como Positivos = {matriz[1][2]}
-Valores Positivos classificados como Negativos = {matriz[2][0]}
-Valores Positivos classificados como Neutros = {matriz[2][1]}
+print(f"""Valores Negativos Corretos = {matriz_mlb[0][0]}
+Valores Neutros Corretos = {matriz_mlb[1][1]} 
+Valores Positivos Corretos = {matriz_mlb[2][2]}\n
+Valores Negativos classificados como Neutros = {matriz_mlb[0][1]}
+Valores Negativos classificados como Positivos = {matriz_mlb[0][2]}
+Valores Neutros classificados como Negativos = {matriz_mlb[1][0]}
+Valores Neutros classificados como Positivos = {matriz_mlb[1][2]}
+Valores Positivos classificados como Negativos = {matriz_mlb[2][0]}
+Valores Positivos classificados como Neutros = {matriz_mlb[2][1]}
 """)
