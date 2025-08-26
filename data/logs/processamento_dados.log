@@ -1,16 +1,100 @@
-2025-08-23 18:22:23,425 - INFO 
+2025-08-26 02:01:25,353 - INFO 
 Dataset importado com sucesso.
 
-2025-08-23 18:22:23,425 - INFO 
+2025-08-26 02:01:25,353 - INFO 
 Verificacao do dataset STORE PRODUCT
-Quantidade de linhas: 11952
+Quantidade de linhas: 76747
+Quantidade de colunas: 6
+
+2025-08-26 02:01:25,361 - INFO 
+Verificacao de valores ausentes no dataset RULE-BASED.
+
+2025-08-26 02:01:25,454 - INFO 
+Removendo 34029 valores ausentes.
+
+2025-08-26 02:01:25,467 - INFO 
+Valores ausentes removidos. Total de linhas apos remocao: 42934
+
+2025-08-26 02:01:25,469 - INFO 
+Verificacao de linhas duplicadas do dataset RULE-BASED.
+
+2025-08-26 02:01:25,512 - INFO 
+Removendo 4278 linhas duplicadas.
+
+2025-08-26 02:01:25,537 - INFO 
+Linhas duplicadas removidas. Total de linhas apos remocao: 38656.
+
+2025-08-26 02:01:25,540 - INFO 
+Coluna nome_produto foi excluida do dataset RULE-BASED.
+
+2025-08-26 02:01:25,542 - INFO 
+Coluna preco_produto foi excluida do dataset RULE-BASED.
+
+2025-08-26 02:01:25,544 - INFO 
+Coluna pontuacao foi excluida do dataset RULE-BASED.
+
+2025-08-26 02:01:25,545 - INFO 
+Coluna avaliacao foi excluida do dataset RULE-BASED.
+
+2025-08-26 02:01:25,549 - INFO 
+Verificacao final.
+
+2025-08-26 02:01:25,549 - INFO 
+Verificacao do dataset RULE-BASED
+Quantidade de linhas: 38656
 Quantidade de colunas: 2
 
-2025-08-23 18:22:24,194 - INFO 
+2025-08-26 02:01:25,556 - INFO 
+Verificacao de valores ausentes no dataset ML-BASED.
+
+2025-08-26 02:01:25,655 - INFO 
+Removendo 34029 valores ausentes.
+
+2025-08-26 02:01:25,665 - INFO 
+Valores ausentes removidos. Total de linhas apos remocao: 42934
+
+2025-08-26 02:01:25,665 - INFO 
+Verificacao de linhas duplicadas do dataset ML-BASED.
+
+2025-08-26 02:01:25,713 - INFO 
+Removendo 4278 linhas duplicadas.
+
+2025-08-26 02:01:25,735 - INFO 
+Linhas duplicadas removidas. Total de linhas apos remocao: 38656.
+
+2025-08-26 02:01:25,735 - INFO 
+Coluna nome_produto foi excluida do dataset ML-BASED.
+
+2025-08-26 02:01:25,735 - INFO 
+Coluna preco_produto foi excluida do dataset ML-BASED.
+
+2025-08-26 02:01:25,735 - INFO 
+Coluna pontuacao foi excluida do dataset ML-BASED.
+
+2025-08-26 02:01:25,735 - INFO 
+Coluna avaliacao foi excluida do dataset ML-BASED.
+
+2025-08-26 02:01:25,743 - INFO 
+Verificacao final.
+
+2025-08-26 02:01:25,743 - INFO 
+Verificacao do dataset ML-BASED
+Quantidade de linhas: 38656
+Quantidade de colunas: 2
+
+2025-08-26 02:01:25,907 - INFO 
 Dataset importado com sucesso.
 
-2025-08-23 18:22:24,194 - INFO 
-Verificacao do dataset STORE PRODUCT
-Quantidade de linhas: 11952
+2025-08-26 02:01:25,907 - INFO 
+Verificacao do dataset RULE-BASED
+Quantidade de linhas: 38656
+Quantidade de colunas: 2
+
+2025-08-26 02:01:26,439 - INFO 
+Dataset importado com sucesso.
+
+2025-08-26 02:01:26,439 - INFO 
+Verificacao do dataset ML-BASED
+Quantidade de linhas: 38656
 Quantidade de colunas: 2
 
